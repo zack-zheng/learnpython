@@ -16,7 +16,7 @@ class mzitu():
             self.mkdir(path) ##调用mkdir函数创建文件夹！这儿path代表的是标题title哦！！！！！不要糊涂了哦！
             href = a['href']
             self.html(href) ##调用html函数把href参数传递过去！href是啥还记的吧？ 就是套图的地址哦！！不要迷糊了哦！
-            break
+
 
     def html(self, href):   ##这个函数是处理套图地址获得图片的页面地址
         html = self.request(href)
@@ -25,7 +25,7 @@ class mzitu():
         for page in range(1, int(max_span) + 1):
             page_url = href + '/' + str(page)
             self.img(page_url) ##调用img函数
-            break
+
 
     def img(self, page_url): ##这个函数处理图片页面地址获得图片的实际地址
         img_html = self.request(page_url)
